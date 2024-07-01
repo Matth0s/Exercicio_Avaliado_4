@@ -14,6 +14,14 @@ struct No
 	~No(void);
 
 	No<T>&	operator=(const No<T> &rhs);
+
+	bool	operator==(const No<T> &rhs);
+	bool	operator<(const No<T> &rhs);
+	bool	operator>(const No<T> &rhs);
+
+	bool	operator==(const T &dado);
+	bool	operator<(const T &dado);
+	bool	operator>(const T &dado);
 };
 
 template<class T>
@@ -52,6 +60,42 @@ No<T>&	No<T>::operator=(const No<T> &rhs)
 		this->maior = rhs.maior;
 	}
 	return (*this);
+};
+
+template<class T>
+bool	No<T>::operator==(const No<T> &rhs)
+{
+	return (*(this->dado) == *(rhs.dado));
+};
+
+template<class T>
+bool	No<T>::operator<(const No<T> &rhs)
+{
+	return (*(this->dado) < *(rhs.dado));
+};
+
+template<class T>
+bool	No<T>::operator>(const No<T> &rhs)
+{
+	return (*(this->dado) > *(rhs.dado));
+};
+
+template<class T>
+bool	No<T>::operator==(const T &dado)
+{
+	return (*(this->dado) == dado);
+};
+
+template<class T>
+bool	No<T>::operator<(const T &dado)
+{
+	return (*(this->dado) < dado);
+};
+
+template<class T>
+bool	No<T>::operator>(const T &dado)
+{
+	return (*(this->dado) > dado);
 };
 
 # endif

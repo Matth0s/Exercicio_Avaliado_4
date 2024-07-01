@@ -2,7 +2,8 @@
 SRC_DIR		=	./source \
 				./test
 SRC			=	Utils.cpp \
-				Sistema.cpp
+				Sistema.cpp \
+				Atleta.cpp
 SRC_MAIN	=	main.cpp
 SRC_TESTE	=	teste_main.cpp
 

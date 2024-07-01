@@ -10,7 +10,7 @@ template<class T>
 class Arvore
 {
 	template<class U>
-	friend	ostream &operator<<(ostream &out, Arvore<U> &rhs);
+	friend	ostream &operator<<(ostream &out, const Arvore<U> &rhs);
 
 	private:
 		No<T>*	_raiz;
@@ -29,7 +29,7 @@ class Arvore
 		/* Faz o delete do nó e cuida para a avore continuar conectada. */
 		void	_removerNo(No<T>** no);
 		/* Realiza a impressão dos elementos na arvore de forma recursiva. */
-		void	_mostrar(ostream &out, No<T>* no, int nivel);
+		void	_mostrar(ostream &out, const No<T>* no, int nivel) const;
 
 	public:
 		Arvore(void);
@@ -101,9 +101,9 @@ No<T>**	Arvore<T>::_buscarDado(No<T>** no, U dado)
 {
 	if (!no || !*no)
 		return (NULL);
-	if (*((*no)->dado) < dado)
+	if (**no < dado)
 		return (this->_buscarDado(&((*no)->maior), dado));
-	else if (*((*no)->dado) > dado)
+	else if (**no > dado)
 		return (this->_buscarDado(&((*no)->menor), dado));
 
 	return (no);
@@ -125,7 +125,7 @@ void	Arvore<T>::_inserirDado(No<T>** no, const T dado)
 {
 	if (!*no)
 		*no = new No<T>(dado);
-	else if (*((*no)->dado) < dado)
+	else if (**no < dado)
 		this->_inserirDado(&((*no)->maior), dado);
 	else
 		this->_inserirDado(&((*no)->menor), dado);
@@ -185,7 +185,7 @@ Arvore<T>&	Arvore<T>::operator-(const T &dado)
 };
 
 template<class T>
-void	Arvore<T>::_mostrar(ostream &out, No<T>* no, int nivel)
+void	Arvore<T>::_mostrar(ostream &out, const No<T>* no, int nivel) const
 {
 	if (no)
 	{
@@ -202,7 +202,7 @@ void	Arvore<T>::_mostrar(ostream &out, No<T>* no, int nivel)
 };
 
 template<class U>
-ostream &operator<<(ostream &out, Arvore<U> &rhs)
+ostream &operator<<(ostream &out, const Arvore<U> &rhs)
 {
 	rhs._mostrar(out, rhs._raiz, 0);
 	return (out);

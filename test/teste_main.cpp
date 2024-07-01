@@ -131,7 +131,43 @@ int	main(void)
 	}
 	separador();
 	{
-		Sistema	sistema;
+		Sistema		sistema;
+
+		sistema.insere(Atleta("marcio"));
+		sistema.insere(Atleta("felipe"));
+		sistema.insere(Atleta("heitor"));
+		sistema.insere(Atleta("elias"));
+		sistema.insere(Atleta("beatriz"));
+		sistema.insere(Atleta("olavo"));
+		sistema.insere(Atleta("vivian"));
+
+		sistema.imprime();
+		cout << endl;
+	}
+	separador();
+	{
+		Sistema		sistema;
+
+		sistema.insere(Atleta("marcio"));
+		sistema.insere(Atleta("felipe"));
+		sistema.insere(Atleta("heitor"));
+		sistema.insere(Atleta("elias"));
+		sistema.insere(Atleta("beatriz"));
+		sistema.insere(Atleta("olavo"));
+		sistema.insere(Atleta("vivian"));
+
+		sistema.remove(Atleta("heitor"));
+		sistema.remove(Atleta("beatriz"));
+
+		try {
+			cout << *sistema.busca("olavo") << endl;
+			cout << *sistema.busca("heitor") << endl;
+		} catch (exception &e) {
+			cout << e.what() << endl;
+		}
+
+		sistema.imprime();
+		cout << endl;
 	}
 	separador();
 
