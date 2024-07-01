@@ -11,7 +11,9 @@ OBJ_MAIN	=	$(SRC_MAIN:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_TESTE	=	$(SRC_TESTE:%.cpp=$(OBJ_DIR)/%.o)
 
 INCD_DIR	=	-I ./include
-INCD		=	Utils.h
+INCD		=	Utils.h \
+				No.h \
+				Arvore.h
 #______________________________________//_______________________________________
 vpath %.cpp $(SRC_DIR)
 vpath %.h $(INCD_DIR)
