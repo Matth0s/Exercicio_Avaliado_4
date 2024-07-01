@@ -7,7 +7,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include "Arvore.h"
+#include "Sistema.h"
 #include "Utils.h"
 
 using namespace std;
@@ -66,7 +66,7 @@ int	main(void)
 	{
 		Arvore<string>	arvore;
 
-		arvore.mostrar();
+		cout << arvore << endl;
 	}
 	separador();
 	{
@@ -83,8 +83,7 @@ int	main(void)
 		arvore = arvore + "tubarao";
 		arvore = arvore + "tubarao";
 
-		arvore.mostrar();
-		cout << endl;
+		cout << arvore << endl;
 	}
 	separador();
 	{
@@ -106,8 +105,7 @@ int	main(void)
 		arvore = arvore - "turabaro";
 		arvore = arvore - "turabaro";
 
-		arvore.mostrar();
-		cout << endl;
+		cout << arvore << endl;
 	}
 	separador();
 	{
@@ -115,12 +113,25 @@ int	main(void)
 
 		arvore = arvore + Teste("martelo");
 		arvore = arvore + Teste("folha");
+		arvore = arvore + Teste("helicoptero");
+		arvore = arvore + Teste("esmalte");
+		arvore = arvore + Teste("bolo");
+		arvore = arvore + Teste("ovelha");
+		arvore = arvore + Teste("valor");
 
-		cout << *(arvore("martelo")) << endl;
-		cout << ( arvore("teste") == NULL ? "✅" : "❌") << endl;
+		Arvore<Teste>	arvore2(arvore);
 
-		arvore.mostrar();
-		cout << endl;
+		cout << arvore << endl;
+		cout << arvore2 << endl;
+
+		arvore2 = arvore2 - Teste("folha");
+		arvore2 = arvore2 - Teste("martelo");
+
+		cout << arvore2 << endl;
+	}
+	separador();
+	{
+		Sistema	sistema;
 	}
 	separador();
 

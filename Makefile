@@ -1,7 +1,8 @@
 #______________________________________//_______________________________________
 SRC_DIR		=	./source \
 				./test
-SRC			=	Utils.cpp
+SRC			=	Utils.cpp \
+				Sistema.cpp
 SRC_MAIN	=	main.cpp
 SRC_TESTE	=	teste_main.cpp
 
@@ -13,7 +14,9 @@ OBJ_TESTE	=	$(SRC_TESTE:%.cpp=$(OBJ_DIR)/%.o)
 INCD_DIR	=	-I ./include
 INCD		=	Utils.h \
 				No.h \
-				Arvore.h
+				Arvore.h \
+				Sistema.h \
+				Atleta.h
 #______________________________________//_______________________________________
 vpath %.cpp $(SRC_DIR)
 vpath %.h $(INCD_DIR)

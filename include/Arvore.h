@@ -9,17 +9,27 @@ using namespace std;
 template<class T>
 class Arvore
 {
+	template<class U>
+	friend	ostream &operator<<(ostream &out, Arvore<U> &rhs);
+
 	private:
 		No<T>*	_raiz;
 
+		/* Função responsavel por fazer a desalocação de memoria dos nós criados. */
 		void	_limparNos(No<T>* no);
+		/* Função responsavel por fazer a copia profunda de uma outra arvore
+		passada por parametro. */
 		void	_inserirNos(No<T>** dst, No<T>* src);
 
+		/* Realiza a busca do elemento nos nós da arvore de forma recursiva. */
 		template<class U>
 		No<T>**	_buscarDado(No<T>** no, const U dado);
+		/* Utilizada para inserir um elemento novo na arvore de forma recursiva. */
 		void	_inserirDado(No<T>** no, const T dado);
+		/* Faz o delete do nó e cuida para a avore continuar conectada. */
 		void	_removerNo(No<T>** no);
-		void	_mostrar(No<T>* no, int nivel);
+		/* Realiza a impressão dos elementos na arvore de forma recursiva. */
+		void	_mostrar(ostream &out, No<T>* no, int nivel);
 
 	public:
 		Arvore(void);
@@ -28,10 +38,12 @@ class Arvore
 
 		Arvore<T>&	operator=(const Arvore<T> &rhs);
 
+		/* Cordena a utilização do metodo _buscarDado */
 		T*			operator()(const string &chave);
+		/* Cordena a utilização do metodo _inserirDado */
 		Arvore<T>&	operator+(const T &dado);
+		/* Cordena a utilização do metodo _removerDado */
 		Arvore<T>&	operator-(const T &dado);
-		void		mostrar(void);
 };
 
 template<class T>
@@ -173,26 +185,27 @@ Arvore<T>&	Arvore<T>::operator-(const T &dado)
 };
 
 template<class T>
-void	Arvore<T>::_mostrar(No<T>* no, int nivel)
+void	Arvore<T>::_mostrar(ostream &out, No<T>* no, int nivel)
 {
 	if (no)
 	{
 		if (no->menor) {
-			_mostrar(no->menor, nivel + 1);
-			cout << " >";
+			_mostrar(out, no->menor, nivel + 1);
+			out << " >";
 		}
-		cout << "(" << nivel << ")" << *(no->dado);
+		out << "(" << nivel << ")" << *(no->dado);
 		if (no->maior) {
-			cout << "< ";
-			_mostrar(no->maior, nivel + 1);
+			out << "< ";
+			_mostrar(out, no->maior, nivel + 1);
 		}
 	}
 };
 
-template<class T>
-void	Arvore<T>::mostrar(void)
+template<class U>
+ostream &operator<<(ostream &out, Arvore<U> &rhs)
 {
-	this->_mostrar(_raiz, 0);
+	rhs._mostrar(out, rhs._raiz, 0);
+	return (out);
 };
 
 # endif
