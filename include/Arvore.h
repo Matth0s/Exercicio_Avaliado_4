@@ -91,7 +91,7 @@ void	Arvore<T>::_inserirNos(No<T>** dst, No<T>* src)
 {
 	if (!src)
 		return ;
-	*dst = new No<T>(src->dado);
+	*dst = new No<T>(*src);
 	this->_inserirNos(&((*dst)->menor), src->menor);
 	this->_inserirNos(&((*dst)->maior), src->maior);
 };
@@ -139,6 +139,8 @@ Arvore<T>&	Arvore<T>::operator+(T* dado)
 
 	if (!checkar)
 		this->_inserirDado(&_raiz, dado);
+	else
+		delete dado;
 	return (*this);
 };
 

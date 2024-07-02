@@ -67,7 +67,6 @@ void	separador(void)
 
 int	main(void)
 {
-
 	separador();
 	{
 		Arvore<string>	arvore;
@@ -92,118 +91,122 @@ int	main(void)
 		cout << arvore << endl;
 	}
 	separador();
-	// {
-	// 	Arvore<string>	arvore;
+	{
+		Arvore<string>	arvore;
 
-	// 	arvore = arvore + "martelo";
-	// 	arvore = arvore + "folha";
-	// 	arvore = arvore + "helicoptero";
-	// 	arvore = arvore + "esmalte";
-	// 	arvore = arvore + "bolo";
-	// 	arvore = arvore + "ovelha";
-	// 	arvore = arvore + "valor";
-	// 	arvore = arvore + "rato";
-	// 	arvore = arvore + "tubarao";
-	// 	arvore = arvore + "etaria";
-	// 	arvore = arvore + "etapa";
+		arvore = arvore + new string("martelo");
+		arvore = arvore + new string("folha");
+		arvore = arvore + new string("helicoptero");
+		arvore = arvore + new string("esmalte");
+		arvore = arvore + new string("bolo");
+		arvore = arvore + new string("ovelha");
+		arvore = arvore + new string("valor");
+		arvore = arvore + new string("rato");
+		arvore = arvore + new string("tubarao");
+		arvore = arvore + new string("etaria");
+		arvore = arvore + new string("etapa");
 
-	// 	arvore = arvore - "folha";
-	// 	arvore = arvore - "turabaro";
-	// 	arvore = arvore - "turabaro";
+		arvore = arvore - "folha";
+		arvore = arvore - "turabaro";
+		arvore = arvore - "turabaro";
 
-	// 	cout << arvore << endl;
-	// }
-	// separador();
-	// {
-	// 	Arvore<Teste>	arvore;
+		cout << arvore << endl;
+	}
+	separador();
+	{
+		Arvore<Teste>	arvore;
 
-	// 	arvore = arvore + Teste("martelo");
-	// 	arvore = arvore + Teste("folha");
-	// 	arvore = arvore + Teste("helicoptero");
-	// 	arvore = arvore + Teste("esmalte");
-	// 	arvore = arvore + Teste("bolo");
-	// 	arvore = arvore + Teste("ovelha");
-	// 	arvore = arvore + Teste("valor");
+		arvore = arvore + new Teste("martelo");
+		arvore = arvore + new Teste("folha");
+		arvore = arvore + new Teste("helicoptero");
+		arvore = arvore + new Teste("esmalte");
+		arvore = arvore + new Teste("bolo");
+		arvore = arvore + new Teste("ovelha");
+		arvore = arvore + new Teste("valor");
 
-	// 	Arvore<Teste>	arvore2(arvore);
+		Arvore<Teste>	arvore2(arvore);
 
-	// 	cout << arvore << endl;
-	// 	cout << arvore2 << endl;
+		cout << arvore << endl;
+		cout << arvore2 << endl;
 
-	// 	arvore2 = arvore2 - Teste("folha");
-	// 	arvore2 = arvore2 - Teste("martelo");
+		arvore2 = arvore2 - Teste("folha");
+		arvore2 = arvore2 - Teste("martelo");
 
-	// 	cout << arvore2 << endl;
-	// }
-	// separador();
-	// {
-	// 	Sistema		sistema;
-
-	// 	sistema.insere(Atleta("marcio"));
-	// 	sistema.insere(Atleta("felipe"));
-	// 	sistema.insere(Atleta("heitor"));
-	// 	sistema.insere(Atleta("elias"));
-	// 	sistema.insere(Atleta("beatriz"));
-	// 	sistema.insere(Atleta("olavo"));
-	// 	sistema.insere(Atleta("vivian"));
-
-	// 	sistema.imprime();
-	// 	cout << endl;
-	// }
-	// separador();
-	// {
-	// 	Sistema		sistema;
-
-	// 	sistema.insere(Atleta("marcio"));
-	// 	sistema.insere(Atleta("felipe"));
-	// 	sistema.insere(Atleta("heitor"));
-	// 	sistema.insere(Atleta("elias"));
-	// 	sistema.insere(Atleta("beatriz"));
-	// 	sistema.insere(Atleta("olavo"));
-	// 	sistema.insere(Atleta("vivian"));
-
-	// 	sistema.remove(Atleta("heitor"));
-	// 	sistema.remove(Atleta("beatriz"));
-
-	// 	try {
-	// 		cout << *sistema.busca("olavo") << endl;
-	// 		cout << *sistema.busca("heitor") << endl;
-	// 	} catch (exception &e) {
-	// 		cout << e.what() << endl;
-	// 	}
-
-	// 	sistema.imprime();
-	// 	cout << endl;
-	// }
+		cout << arvore2 << endl;
+	}
 	separador();
 	{
 		Sistema		sistema;
 
-		sistema.insere(new AtletaBasquete("marcio", 2.10));
-		// sistema.insere(AtletaFutebol("felipe", "Vasco"));
+		sistema.insere(new Atleta("marcio"));
+		sistema.insere(new Atleta("felipe"));
+		sistema.insere(new Atleta("heitor"));
+		sistema.insere(new Atleta("elias"));
+		sistema.insere(new Atleta("beatriz"));
+		sistema.insere(new Atleta("olavo"));
+		sistema.insere(new Atleta("vivian"));
 
-		// cout << *sistema.busca("felipe") << endl;
 		sistema.imprime();
 		cout << endl;
 	}
 	separador();
 	{
-		// Atleta*	a = new AtletaBasquete("marcio", 2.10);
-		// Atleta* b = new AtletaFutebol("felipe", "Vasco");
-		// AtletaGinastica("heitor", "Argolas");
-		// AtletaJudo("elias", 150.30);
-		// AtletaNatacao("beatriz", 15);
-		// AtletaVolei("olavo", 10);
-		// Atleta("vivian");
+		Sistema		sistema;
 
-		// cout << *a <<endl;
-		// cout << *b <<endl;
+		sistema.insere(new Atleta("marcio"));
+		sistema.insere(new Atleta("felipe"));
+		sistema.insere(new Atleta("heitor"));
+		sistema.insere(new Atleta("elias"));
+		sistema.insere(new Atleta("beatriz"));
+		sistema.insere(new Atleta("olavo"));
+		sistema.insere(new Atleta("vivian"));
 
-		// cout << *sistema.busca("felipe") << endl;
-		// sistema.imprime();
-		// cout << endl;
-		// delete a;
-		// delete b;
+		sistema.remove(Atleta("heitor"));
+		sistema.remove(Atleta("beatriz"));
+
+		try {
+			cout << *sistema.busca("olavo") << endl;
+			cout << *sistema.busca("heitor") << endl;
+		} catch (exception &e) {
+			cout << e.what() << endl;
+		}
+
+		sistema.imprime();
+		cout << endl;
+	}
+	separador();
+	{
+		Sistema		sistema;
+
+		sistema.insere(new AtletaBasquete("marcio", 2.10));
+		sistema.insere(new AtletaFutebol("felipe", "Vasco"));
+		sistema.insere(new AtletaGinastica("heitor", "argolas"));
+		sistema.insere(new AtletaJudo("elias", 120));
+		sistema.insere(new AtletaNatacao("beatriz", 15));
+		sistema.insere(new AtletaVolei("olavo", 10));
+		sistema.insere(new Atleta("vivian"));
+
+		cout << *sistema.busca("felipe") << endl;
+		sistema.imprime();
+		cout << endl;
+	}
+	separador();
+	{
+		Arvore<Atleta>	arvore;
+
+		arvore = arvore + new AtletaBasquete("marcio", 2.10);
+		arvore = arvore + new AtletaFutebol("felipe", "Vasco");
+		arvore = arvore + new AtletaGinastica("heitor", "argolas");
+		arvore = arvore + new AtletaJudo("elias", 120);
+		arvore = arvore + new AtletaNatacao("beatriz", 15);
+		arvore = arvore + new AtletaVolei("olavo", 10);
+		arvore = arvore + new Atleta("vivian");
+
+		Arvore<Atleta>	arvore2(arvore);
+
+		cout << arvore << endl;
+		cout << arvore2 << endl;
+
 	}
 	separador();
 

@@ -49,7 +49,9 @@ template<class T>
 No<T>&	No<T>::operator=(const No<T> &rhs)
 {
 	if (this != &rhs) {
-		this->dado = rhs.dado;
+		if (this->dado)
+			delete this->dado;
+		this->dado = new T(*rhs.dado);
 		this->menor = rhs.menor;
 		this->maior = rhs.maior;
 	}
