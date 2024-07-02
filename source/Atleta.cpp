@@ -62,8 +62,16 @@ void	Atleta::setNome(string nome)
 	this->_nome = nome;
 }
 
-ostream &operator<<(ostream &out, const Atleta &rhs)
+ostream&	Atleta::operator<<(ostream &out) const
 {
-	out << rhs._nome;
+	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << "  | nome : " << this->_nome << "\n";
+	out << "  \\____________________\n";
+	return (out);
+};
+
+ostream&	operator<<(ostream &out, const Atleta &rhs)
+{
+	rhs << out;
 	return (out);
 };

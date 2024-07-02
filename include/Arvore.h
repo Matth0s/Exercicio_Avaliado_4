@@ -23,9 +23,9 @@ class Arvore
 
 		/* Realiza a busca do elemento nos nós da arvore de forma recursiva. */
 		template<class U>
-		No<T>**	_buscarDado(No<T>** no, const U dado);
+		No<T>**	_buscarDado(No<T>** no, const U &dado);
 		/* Utilizada para inserir um elemento novo na arvore de forma recursiva. */
-		void	_inserirDado(No<T>** no, const T dado);
+		void	_inserirDado(No<T>** no, T* dado);
 		/* Faz o delete do nó e cuida para a avore continuar conectada. */
 		void	_removerNo(No<T>** no);
 		/* Realiza a impressão dos elementos na arvore de forma recursiva. */
@@ -41,7 +41,7 @@ class Arvore
 		/* Cordena a utilização do metodo _buscarDado */
 		T*			operator()(const string &chave);
 		/* Cordena a utilização do metodo _inserirDado */
-		Arvore<T>&	operator+(const T &dado);
+		Arvore<T>&	operator+(T* dado);
 		/* Cordena a utilização do metodo _removerDado */
 		Arvore<T>&	operator-(const T &dado);
 };
@@ -82,6 +82,7 @@ void	Arvore<T>::_limparNos(No<T>* no)
 		return ;
 	this->_limparNos(no->menor);
 	this->_limparNos(no->maior);
+	delete no->dado;
 	delete no;
 };
 
@@ -90,14 +91,14 @@ void	Arvore<T>::_inserirNos(No<T>** dst, No<T>* src)
 {
 	if (!src)
 		return ;
-	*dst = new No<T>(*(src->dado));
+	*dst = new No<T>(src->dado);
 	this->_inserirNos(&((*dst)->menor), src->menor);
 	this->_inserirNos(&((*dst)->maior), src->maior);
 };
 
 template<class T>
 template<class U>
-No<T>**	Arvore<T>::_buscarDado(No<T>** no, U dado)
+No<T>**	Arvore<T>::_buscarDado(No<T>** no, const U &dado)
 {
 	if (!no || !*no)
 		return (NULL);
@@ -121,20 +122,20 @@ T*		Arvore<T>::operator()(const string &chave)
 };
 
 template<class T>
-void	Arvore<T>::_inserirDado(No<T>** no, const T dado)
+void	Arvore<T>::_inserirDado(No<T>** no, T* dado)
 {
 	if (!*no)
 		*no = new No<T>(dado);
-	else if (**no < dado)
+	else if (**no < *dado)
 		this->_inserirDado(&((*no)->maior), dado);
 	else
 		this->_inserirDado(&((*no)->menor), dado);
 };
 
 template<class T>
-Arvore<T>&	Arvore<T>::operator+(const T &dado)
+Arvore<T>&	Arvore<T>::operator+(T* dado)
 {
-	No<T>**	checkar = this->_buscarDado(&_raiz, dado);
+	No<T>**	checkar = this->_buscarDado(&_raiz, *dado);
 
 	if (!checkar)
 		this->_inserirDado(&_raiz, dado);
@@ -170,6 +171,7 @@ void	Arvore<T>::_removerNo(No<T>** no)
 		noCandidato->maior = noDeletar->maior;
 		*no = noCandidato;
 	}
+	delete noDeletar->dado;
 	delete noDeletar;
 };
 
@@ -193,7 +195,7 @@ void	Arvore<T>::_mostrar(ostream &out, const No<T>* no, int nivel) const
 			_mostrar(out, no->menor, nivel + 1);
 			out << " >";
 		}
-		out << "(" << nivel << ")" << *(no->dado);
+		out << "(" << nivel << ")\n" << *(no->dado);
 		if (no->maior) {
 			out << "< ";
 			_mostrar(out, no->maior, nivel + 1);

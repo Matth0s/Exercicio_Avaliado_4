@@ -3,7 +3,13 @@ SRC_DIR		=	./source \
 				./test
 SRC			=	Utils.cpp \
 				Sistema.cpp \
-				Atleta.cpp
+				Atleta.cpp \
+				AtletaGinastica.cpp \
+				AtletaNatacao.cpp \
+				AtletaVolei.cpp \
+				AtletaBasquete.cpp \
+				AtletaJudo.cpp \
+				AtletaFutebol.cpp
 SRC_MAIN	=	main.cpp
 SRC_TESTE	=	teste_main.cpp
 
@@ -17,7 +23,14 @@ INCD		=	Utils.h \
 				No.h \
 				Arvore.h \
 				Sistema.h \
-				Atleta.h
+				Atleta.h \
+				AtletaGinastica.h \
+				AtletaNatacao.h \
+				AtletaVolei.h \
+				AtletaBasquete.h \
+				AtletaJudo.h \
+				AtletaFutebol.h
+
 #______________________________________//_______________________________________
 vpath %.cpp $(SRC_DIR)
 vpath %.h $(INCD_DIR)

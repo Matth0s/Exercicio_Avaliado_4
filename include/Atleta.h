@@ -7,7 +7,7 @@ using namespace std;
 
 class Atleta
 {
-	friend	ostream &operator<<(ostream &out, const Atleta &rhs);
+	friend	ostream&	operator<<(ostream &out, const Atleta &rhs);
 
 	private:
 		string	_nome;
@@ -19,6 +19,8 @@ class Atleta
 		virtual ~Atleta(void);
 
 		Atleta&	operator=(const Atleta &rhs);
+
+		virtual ostream&	operator<<(ostream &out) const;
 
 		bool operator==(const Atleta &rhs);
 		bool operator<(const Atleta &rhs);

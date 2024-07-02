@@ -4,7 +4,7 @@ Sistema::Sistema(void) : _arvore() {}
 
 Sistema::~Sistema(void) {}
 
-void	Sistema::insere(const Atleta& atleta)
+void	Sistema::insere(Atleta* atleta)
 {
 	this->_arvore + atleta;
 }

@@ -10,7 +10,7 @@ struct No
 
 	No(void);
 	No(const No<T> &src);
-	No(const T dado);
+	No(T* dado);
 	~No(void);
 
 	No<T>&	operator=(const No<T> &rhs);
@@ -37,25 +37,19 @@ No<T>::No(const No<T> &src)
 };
 
 template<class T>
-No<T>::No(const T dado)
-	: dado(NULL), menor(NULL), maior(NULL)
-{
-	this->dado = new T(dado);
-};
+No<T>::No(T* dado)
+	: dado(dado), menor(NULL), maior(NULL)
+{};
 
 template<class T>
 No<T>::~No(void)
-{
-	delete dado;
-};
+{};
 
 template<class T>
 No<T>&	No<T>::operator=(const No<T> &rhs)
 {
 	if (this != &rhs) {
-		if (this->dado)
-			delete this->dado;
-		this->dado = new T(*(rhs.dado));
+		this->dado = rhs.dado;
 		this->menor = rhs.menor;
 		this->maior = rhs.maior;
 	}

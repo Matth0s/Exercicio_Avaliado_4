@@ -23,7 +23,7 @@ class Sistema
 		~Sistema(void);
 
 		/* Insere um atleta no sistema */
-		void	insere(const Atleta& atleta);
+		void	insere(Atleta* atleta);
 		/* Busca um atleta pelo nome no sistema */
 		Atleta*	busca(const string& nome);
 		/* Remove um atleta no sistema */
