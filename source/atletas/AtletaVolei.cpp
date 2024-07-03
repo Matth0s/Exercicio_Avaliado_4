@@ -26,10 +26,10 @@ void	AtletaVolei::setVelocidadeSaque(double velocidadeSaque)
 
 ostream&	AtletaVolei::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome       : " << this->getNome() << "\n";
-	out << "  | vel. saque : " << this->_velocidadeSaque << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome       : " << this->getNome() << "\n";
+	out << " | vel. saque : " << this->_velocidadeSaque << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

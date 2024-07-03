@@ -26,10 +26,10 @@ void	AtletaBasquete::setAltura(double altura)
 
 ostream&	AtletaBasquete::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome   : " << this->getNome() << "\n";
-	out << "  | altura : " << this->_altura << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome   : " << this->getNome() << "\n";
+	out << " | altura : " << this->_altura << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

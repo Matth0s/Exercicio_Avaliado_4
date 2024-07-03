@@ -25,7 +25,9 @@ void	Sistema::remove(const Atleta& atleta)
 
 void	Sistema::imprime(void) const
 {
+	cout << "\n/¨¨¨¨¨¨¨¨¨¨  SISTEMA  ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
 	cout << this->_arvore;
+	cout << "\\______________________________________________\n";
 }
 
 const char* Sistema::AtletaNaoEncontrado::what(void) const throw()

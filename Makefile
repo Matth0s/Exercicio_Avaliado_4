@@ -1,7 +1,8 @@
 #______________________________________//_______________________________________
 SRC_DIR		=	./source \
+				./source/atletas \
 				./test
-SRC			=	Utils.cpp \
+SRC			=	Menu.cpp \
 				Sistema.cpp \
 				Atleta.cpp \
 				AtletaGinastica.cpp \
@@ -18,8 +19,9 @@ OBJ			=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_MAIN	=	$(SRC_MAIN:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_TESTE	=	$(SRC_TESTE:%.cpp=$(OBJ_DIR)/%.o)
 
-INCD_DIR	=	-I ./include
-INCD		=	Utils.h \
+INCD_DIR	=	-I ./include \
+				-I ./include/atletas
+INCD		=	Menu.h \
 				No.h \
 				Arvore.h \
 				Sistema.h \

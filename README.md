@@ -6,7 +6,7 @@
 
 ## Introdução:
 
-O programa ----
+O programa implementa um Sistema responsável por armazenar informações de Atletas em uma estrutura interna de arvore.
 
 ## Requisitos Para Compilação:
 
@@ -33,4 +33,4 @@ make
 ```
 ## Como Utilizar:
 
-Ao iniciar o programa ----
+Ao iniciar o programa, um menu será exibido, apresentando as opções de interação com o Sistema. Cada opção é identificada por um código numérico. Após a execução de cada comando, é necessário pressionar a tecla `Enter` para prosseguir com a utilização do programa.

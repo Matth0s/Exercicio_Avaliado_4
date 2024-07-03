@@ -26,10 +26,10 @@ void	AtletaGinastica::setModalidade(string modalidade)
 
 ostream&	AtletaGinastica::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome       : " << this->getNome() << "\n";
-	out << "  | modalidade : " << this->_modalidade << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome       : " << this->getNome() << "\n";
+	out << " | modalidade : " << this->_modalidade << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

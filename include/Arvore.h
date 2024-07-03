@@ -2,6 +2,7 @@
 # define ARVORE_H
 
 #include <iostream>
+#include <sstream>
 #include "No.h"
 
 using namespace std;
@@ -191,17 +192,15 @@ Arvore<T>&	Arvore<T>::operator-(const T &dado)
 template<class T>
 void	Arvore<T>::_mostrar(ostream &out, const No<T>* no, int nivel) const
 {
-	if (no)
-	{
-		if (no->menor) {
-			_mostrar(out, no->menor, nivel + 1);
-			out << " >";
-		}
-		out << "(" << nivel << ")\n" << *(no->dado);
-		if (no->maior) {
-			out << "< ";
-			_mostrar(out, no->maior, nivel + 1);
-		}
+	stringstream	out_temp;
+	string			linha;
+
+	if (no) {
+		_mostrar(out, no->menor, nivel + 1);
+		out_temp << *(no->dado);
+		while (getline(out_temp, linha))
+			out << string(nivel * 4, ' ') << linha << endl;
+		_mostrar(out, no->maior, nivel + 1);
 	}
 };
 

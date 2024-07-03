@@ -26,10 +26,10 @@ void	AtletaJudo::setPeso(double peso)
 
 ostream&	AtletaJudo::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome : " << this->getNome() << "\n";
-	out << "  | peso : " << this->_peso << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome : " << this->getNome() << "\n";
+	out << " | peso : " << this->_peso << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

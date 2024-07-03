@@ -26,10 +26,10 @@ void	AtletaNatacao::setAnosTreino(int anosTreino)
 
 ostream&	AtletaNatacao::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome           : " << this->getNome() << "\n";
-	out << "  | anos de treino : " << this->_anosTreino << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome           : " << this->getNome() << "\n";
+	out << " | anos de treino : " << this->_anosTreino << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

@@ -26,10 +26,10 @@ void	AtletaFutebol::setTime(string time)
 
 ostream&	AtletaFutebol::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome : " << this->getNome() << "\n";
-	out << "  | time : " << this->_time << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome : " << this->getNome() << "\n";
+	out << " | time : " << this->_time << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 

@@ -64,9 +64,9 @@ void	Atleta::setNome(string nome)
 
 ostream&	Atleta::operator<<(ostream &out) const
 {
-	out << "  /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
-	out << "  | nome : " << this->_nome << "\n";
-	out << "  \\____________________\n";
+	out << " /¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n";
+	out << " | nome : " << this->_nome << "\n";
+	out << " \\____________________\n";
 	return (out);
 };
 
